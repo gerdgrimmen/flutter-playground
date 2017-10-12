@@ -1,0 +1,15 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    // emulator -avd Nexus_5 -use-system-libs
+    // flutter run --enable-software-rendering
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flutter mobile app",
+            "type": "flutter",
+            "request": "launch"
+        }
+    ]
+}
