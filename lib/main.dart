@@ -57,22 +57,65 @@ class _FlutterDemoState extends State<FlutterDemo> {
     // write the variable as a string to the file
     await (await _getLocalFile()).writeAsString('$_counter');
   }
+  Future<Null> _decrementCounter(int asd) async {
+    setState(() {
+      _counter -= asd;
+    });
+    // write the variable as a string to the file
+    await (await _getLocalFile()).writeAsString('$_counter');
+  }
+List<BottomNavigationBarItem> bla = [
+  new BottomNavigationBarItem(
+    title: new Title(
+    title: 'title 1',
+    color: new Color(0xFFFFFF00),
+    child: new Text("asdasdasd"),
+  ),
+    icon: new Icon(Icons.delete),
+),
+new BottomNavigationBarItem(
+    title: new Title(
+      title: 'title 2',
+      color: new Color(0xFF00FF00),
+      child: new Text("dsadsadsa"),
+    
+  ),
+    icon: new Icon(Icons.delete),
+),
+new BottomNavigationBarItem(
+    title: new Title(
+      title: 'title 3',
+      color: new Color(0xFFFFFF00),
+      child: new Text("sdasdasda"),
+    
+  ),
+    icon: new Icon(Icons.delete),
+),
+];
+
+
 
   @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
+  Widget build(BuildContext context) => new Scaffold(
       appBar: new AppBar(title: new Text('Flutter Demo')),
       body: new Center(
         child: new Text('Button tapped $_counter time${
           _counter == 1 ? '' : 's'
         }.'),
-      ),
+
+        ),
+        backgroundColor: new Color(0xFFF00FFF),
+        bottomNavigationBar: new BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: bla,
+          onTap: _decrementCounter,
+        ),
       floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: new Icon(Icons.add),
       ),
+      
     );
-  }
 }
 
