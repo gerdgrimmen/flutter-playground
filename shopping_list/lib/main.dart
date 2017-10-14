@@ -1,54 +1,69 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(new MaterialApp(
-    title: 'Flutter Tutorial',
-    home: new TutorialHome(),
-  ));
+class ShoppingList extends StatefulWidget {
+  ShoppingList({Key key, this.products}) : super(key: key);
+
+  final List<Product> products;
+
+  // The framework calls createState the first time a widget appears at a given
+  // location in the tree. If the parent rebuilds and uses the same type of
+  // widget (with the same key), the framework will re-use the State object
+  // instead of creating a new State object.
+
+  @override
+  _ShoppingListState createState() => new _ShoppingListState();
 }
 
-class TutorialHome extends StatelessWidget {
+class _ShoppingListState extends State<ShoppingList> {
+  Set<Product> _shoppingCart = new Set<Product>();
+
+  void _handleCartChanged(Product product, bool inCart) {
+    setState(() {
+      // When user changes what is in the cart, we need to change _shoppingCart
+      // inside a setState call to trigger a rebuild. The framework then calls
+      // build, below, which updates the visual appearance of the app.
+
+      if (inCart)
+        _shoppingCart.add(product);
+      else
+        _shoppingCart.remove(product);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Scaffold is a layout for the major Material Design widgets.
     return new Scaffold(
       appBar: new AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.menu), // top left
-          tooltip: 'Navigation menu',
-          onPressed: null,
-        ),
-        title: new Text('Example title'),
-        actions: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.search), // top right
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-          new IconButton(
-            icon: new Icon(Icons.delete), // top right
-            tooltip: 'Delete',
-            onPressed: null,
-          ),
-        ],
+        title: new Text('Shopping List'),
       ),
-      // body is the majority of the screen.
-      body: new Center(
-        child: new ShoppingListItem(
-          product: new Product(
-            name: "Product 1",
-          ),
-          inCart: true,
-        ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        tooltip: 'Add', // used by assistive technologies
-        child: new Icon(Icons.add),
-        onPressed: null,
+      body: new ListView(
+        padding: new EdgeInsets.symmetric(vertical: 8.0),
+        children: widget.products.map((Product product) {
+          return new ShoppingListItem(
+            product: product,
+            inCart: _shoppingCart.contains(product),
+            onCartChanged: _handleCartChanged,
+          );
+        }).toList(),
       ),
     );
   }
 }
+
+void main() {
+  runApp(new MaterialApp(
+    title: 'Shopping App',
+    home: new ShoppingList(
+      products: <Product>[
+        new Product(name: 'Eggs'),
+        new Product(name: 'Flour'),
+        new Product(name: 'Chocolate chips'),
+      ],
+    ),
+  ));
+}
+
+
 
 
 class Product {
