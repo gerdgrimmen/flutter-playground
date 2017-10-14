@@ -3,10 +3,7 @@
 .idea
 .packages
 .pub/
-flutter_bottomnavbar/build/
-hello_world/build/
-layouts/build/
-material_design/build/
+build/
 ios/.generated/
 packages
 pubspec.lock
