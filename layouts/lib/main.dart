@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero 
         eos et accusam et justo duo dolores et ea rebum. Stet clita kasd 
         gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.""",
-        style: new TextStyle(color: new Color(0xFFF0F0F0), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(0x0)),
+        style: new TextStyle(color: new Color(0xFFF0F0F0), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(0)),
         ),
       ],
       
