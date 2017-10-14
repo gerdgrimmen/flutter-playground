@@ -50,22 +50,6 @@ class _ShoppingListState extends State<ShoppingList> {
   }
 }
 
-void main() {
-  runApp(new MaterialApp(
-    title: 'Shopping App',
-    home: new ShoppingList(
-      products: <Product>[
-        new Product(name: 'Eggs'),
-        new Product(name: 'Flour'),
-        new Product(name: 'Chocolate chips'),
-      ],
-    ),
-  ));
-}
-
-
-
-
 class Product {
   const Product({this.name});
   final String name;
@@ -114,3 +98,15 @@ class ShoppingListItem extends StatelessWidget {
   }
 }
 
+void main() {
+  runApp(new MaterialApp(
+    title: 'Shopping App',
+    home: new ShoppingList(
+      products: <Product>[
+        new Product(name: 'Eggs'),
+        new Product(name: 'Flour'),
+        new Product(name: 'Chocolate chips'),
+      ],
+    ),
+  ));
+}
