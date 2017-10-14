@@ -50,6 +50,22 @@ class _FlutterDemoState extends State<FlutterDemo> {
     }
   }
 
+  /*
+    bla.add(new BottomNavigationBarItem(
+        title: new Title(
+          title: "ADDED",
+          color: new Color(0xFFFFFF00),
+          child: new Text("ADDED Text"),
+        ),
+        icon: new Icon(Icons.delete)
+      ));
+
+    bla.clear();
+
+    One shouldn't add or subtract elements to the bottomnavbaritems list
+
+   */
+
   Future<Null> _incrementCounter() async {
     setState(() {
       _counter++;
