@@ -36,7 +36,12 @@ class TutorialHome extends StatelessWidget {
       body: new Center(
         child: new Column(
           children: <Widget>[
-            new Counter(),
+            new GestureDetector( // Does not work above the Button / on pressable Widgets?!
+              child: new Counter(),
+              onTap: (){
+                print('MyButton was tapped!');
+              },
+            ), 
           ],
         ),
       ),
