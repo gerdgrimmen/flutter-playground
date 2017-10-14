@@ -4,6 +4,7 @@
 .packages
 .pub/
 flutter_bottomnavbar/build/
+shopping_list/build/
 hello_world/build/
 layouts/build/
 material_design/build/
