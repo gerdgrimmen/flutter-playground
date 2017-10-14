@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(new MaterialApp(
     title: 'Flutter Tutorial',
-    home: new MyButton(),
+    home: new TutorialHome(),
   ));
 }
 
@@ -25,6 +25,11 @@ class TutorialHome extends StatelessWidget {
             tooltip: 'Search',
             onPressed: null,
           ),
+          new IconButton(
+            icon: new Icon(Icons.delete), // top right
+            tooltip: 'Delete',
+            onPressed: null,
+          ),
         ],
       ),
       // body is the majority of the screen.
@@ -39,7 +44,7 @@ class TutorialHome extends StatelessWidget {
     );
   }
 }
-
+ // set as home: for different "view"
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
