@@ -127,16 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        new Text("""Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
-        duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
-        sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero 
-        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd 
-        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.""",
-        style: new TextStyle(color: new Color(0xFFF0F0F0), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(0)),
+        new Container(
+          padding: const EdgeInsets.all(32.0),
+          child: new Text("""Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.""",
+              style: new TextStyle(color: new Color(0xFFF0F0F0), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(new List<TextDecoration>())),
+              
+              ),
         ),
       ],
       
