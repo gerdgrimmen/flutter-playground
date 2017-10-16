@@ -55,7 +55,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
+    return  new Container(
+      color: new Color(0xFFFFFFFF),
+      child:
+    new Column(
       children: <Widget>[
         new Image.network(  
             'https://i.ytimg.com/vi/WFlrSZcWwIk/maxresdefault.jpg',
@@ -70,12 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 new Text("First Text",
-                  style: Theme.of(context).primaryTextTheme.title,
-                  textAlign: TextAlign.left,
+              style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0,fontWeight:  FontWeight.bold, decoration: new TextDecoration.combine(new List<TextDecoration>()),
                   ),
+                ),
                 new Text("Second Text",
-                  style: Theme.of(context).primaryTextTheme.title,
+              style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0,fontWeight: FontWeight.normal, decoration: new TextDecoration.combine(new List<TextDecoration>()),
                   ),
+                ),
               ],
             ),
             ),
@@ -83,8 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
               color: new Color(0xFFFF0000),
               ),
             new Text("Counter",
-              style: Theme.of(context).primaryTextTheme.title,
+              style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(new List<TextDecoration>()),
               ),
+            ),
           ],
         ),
         new Row(
@@ -96,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: new Color(0xFF0000FF),
                   ),
                 new Text("Tile 1",
-                  style: Theme.of(context).primaryTextTheme.title,
-                  ),
+              style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(new List<TextDecoration>()),
+                  ),),
               ],
             ),
             ),
@@ -108,7 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: new Color(0xFF0000FF),
                   ),
                 new Text("Tile 2",
-                  style: Theme.of(context).primaryTextTheme.title,
+                                style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(new List<TextDecoration>()),
+                                ),
                   ),
               ],
             ),
@@ -120,8 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: new Color(0xFF0000FF),
                   ),
                 new Text("Tile 3",
-                  style: Theme.of(context).primaryTextTheme.title,
-                  ),
+              style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(new List<TextDecoration>()),
+                  ), ),
               ],
             ),
             ),
@@ -130,12 +136,13 @@ class _MyHomePageState extends State<MyHomePage> {
         new Container(
           padding: const EdgeInsets.all(32.0),
           child: new Text("""Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.""",
-              style: new TextStyle(color: new Color(0xFFF0F0F0), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(new List<TextDecoration>())),
+              style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0,fontWeight: FontWeight.normal, decoration: new TextDecoration.combine(new List<TextDecoration>()),
+              ),
               
               ),
         ),
       ],
-      
+      ),
     );
   }
 }
