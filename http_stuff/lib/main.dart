@@ -30,7 +30,6 @@ class _MyHomePageState extends State<MyHomePage> {
     String url = 'https://httpbin.org/ip';
     var httpClient = createHttpClient();
     var response = await httpClient.read(url);
-    print(response);
     Map data = JSON.decode(response);
     String ip = data['origin'];
 
