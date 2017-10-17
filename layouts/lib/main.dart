@@ -46,10 +46,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   //int _counter = 0;
+  String pic1 = 'https://i.ytimg.com/vi/WFlrSZcWwIk/maxresdefault.jpg';
+  String pic2 = 'https://i.ytimg.com/vi/WFlrSZcWwIk/mresdefault.jpg';
 
   void _nothingToSeeHere() {
     setState(() {
       //_counter++;
+      pic1 = pic2;
     });
   }
 
@@ -61,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
     new Column(
       children: <Widget>[
         new Image.network(  
-            'https://i.ytimg.com/vi/WFlrSZcWwIk/maxresdefault.jpg',
+            pic1,
             repeat: ImageRepeat.noRepeat, // repeat does not seem to work
             scale: 3.0, // scale does not seem to work
             ),
@@ -97,9 +100,18 @@ class _MyHomePageState extends State<MyHomePage> {
             new Expanded(child:
             new Column(
               children: <Widget>[
-                new Icon(Icons.phone,
+                new GestureDetector( 
+                onTap: () {
+                print(
+                  "bla"
+                );
+                print(pic1);
+                _nothingToSeeHere();
+                },
+                child: new Icon(Icons.phone,
                   color: new Color(0xFF0000FF),
                   ),
+                ),
                 new Text("Tile 1",
               style: new TextStyle(color: new Color(0xFF000000), fontFamily: 'arial',fontSize: 12.0, decoration: new TextDecoration.combine(new List<TextDecoration>()),
                   ),),
