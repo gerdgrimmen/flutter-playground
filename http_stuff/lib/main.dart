@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(new MyApp());
@@ -27,11 +27,12 @@ class _MyHomePageState extends State<MyHomePage> {
   String _ipAddress = 'Unknown';
 
   _getIPAddress() async {
-    String url = 'https://httpbin.org/ip';
-    var httpClient = createHttpClient();
+    //String url = 'https://httpbin.org/ip';
+     String url = 'http://192.168.1.196:5984/mydatabase/sad2';
+    var httpClient = new http.Client();
     var response = await httpClient.read(url);
     Map data = JSON.decode(response);
-    String ip = data['origin'];
+    String ip = data['Title'];
 
     // If the widget was removed from the tree while the message was in flight,
     // we want to discard the reply rather than calling setState to update our
